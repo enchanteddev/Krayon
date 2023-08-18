@@ -4,7 +4,7 @@ from ansi import Effect
 with open('generator/pastel.pre.py') as prefile:
     pre = prefile.read()
 
-with open('pastel.template') as fnfile:
+with open('generator/pastel.template') as fnfile:
     fn = fnfile.read()
 
 final = pre + '\n\n'
