@@ -10,7 +10,7 @@ pip install coming soon
 **Usage**:
 ```python
 from pastel import c, t
-print(colored("Hello, Pastel!", color="green", style=TextStyle.BOLD))
+print(C("hey").red)
 ```
 
 With pastel, terminal coding becomes a breeze. Get creative with your terminal UI today!
