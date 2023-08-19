@@ -3,7 +3,7 @@ Templates for the PASTEL library.
 Use this as an alternative to 'input' and 'print'.
 """
 
-from pastel import C
+from .pastel2 import C
 
 def input_(string) -> str:
     print(string, end='')
@@ -19,7 +19,7 @@ confirm = lambda x: input_(C('? ' + f'{x} (y/n) ').white).lower() == 'y'
 
 
 def main():
-    notify('You said: ' + ask('HI! '))
+    notify('You said: ' + ask('HI! whats your name?'))
     status('This workin fine.')
     warning('This scary?')
     success('Then this was a success')

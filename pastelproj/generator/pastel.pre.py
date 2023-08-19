@@ -1,4 +1,4 @@
-from ansi import ANSI, Effect, CantAdd
+from .ansi import ANSI, Effect, CantAdd
 
 class C:
     def __init__(self, string: str = '') -> None:
@@ -19,5 +19,14 @@ class C:
         else:
             raise CantAdd(type(v))
     
-    def __radd__(self, v) -> 'str | C': return self.__add__(v)
+    def __radd__(self, v) -> 'str | C':
+        if isinstance(v, str):
+            return v + str(self)
+        elif isinstance(v, C):
+            newC = C(v.string + self.string)
+            newC.effects = v.effects + self.effects
+            return newC
+        else:
+            raise CantAdd(type(v))
+        
     
