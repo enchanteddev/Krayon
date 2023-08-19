@@ -1,7 +1,9 @@
 from .ansi import ANSI, Effect, CantAdd
 
 class C:
-    def __init__(self, string: str = '') -> None:
+    def __init__(self, string: 'str | C' = '') -> None:
+        if isinstance(string, C):
+            string = string.string
         self.string = string
         self.length = len(string)
         self.effects: list[int] = []
@@ -29,7 +31,8 @@ class C:
         else:
             raise CantAdd(type(v))
         
-    
+    def raw(self) -> str:
+        return str(self).replace("\033", "\\033")
 
     @property
     def reset(self) -> 'C':
