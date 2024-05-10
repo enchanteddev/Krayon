@@ -1,2 +1,2 @@
 from . import templates as t
-from .pastel2 import C
+from .krayon import C

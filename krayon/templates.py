@@ -1,9 +1,9 @@
 """
-Templates for the PASTEL library.
+Templates for the krayon library.
 Use this as an alternative to 'input' and 'print'.
 """
 
-from .pastel2 import C
+from .krayon import C
 
 def input_(string) -> str:
     print(string, end='')

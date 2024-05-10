@@ -1,15 +1,15 @@
 from typing import Any
 
 
-class BasePastelException(Exception):
+class BaseKrayonException(Exception):
     message = ''
     def __init__(self, msg: str | Any = '') -> None:
         super().__init__(f'{self.message} {msg}')
 
-class InvalidANSICode(BasePastelException):
+class InvalidANSICode(BaseKrayonException):
     message = 'ANSI Code should be between 0 and 107. Code given:'
 
-class CantAdd(BasePastelException):
+class CantAdd(BaseKrayonException):
     message = 'Only str and C can be added with C. Not'
 
 class ANSI:
