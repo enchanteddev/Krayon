@@ -1,4 +1,4 @@
-# <span style="background:-webkit-linear-gradient(45deg, #0AF, #F00);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">P A S T E L: Python Terminal Colours</span>
+# <span style="background:-webkit-linear-gradient(45deg, #0AF, #F00);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">K R A Y O N: Python Terminal Colours</span>
 
 The clean, lightweight, **zero-dependency**, cross-platform, ANSI escape code wrapper written in Python.
 
