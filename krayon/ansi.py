@@ -1,6 +1,5 @@
 from typing import Any
 
-
 class BaseKrayonException(Exception):
     message = ''
     def __init__(self, msg: str | Any = '') -> None:
@@ -68,6 +67,7 @@ class Effect:
     WHITE = 37
     # SET_COLOR = 38
     DEFAULT_COLOR = 39
+    DEFAULT_COLOUR = 39
     BG_BLACK = 40
     BG_RED = 41
     BG_GREEN = 42
@@ -78,6 +78,7 @@ class Effect:
     BG_WHITE = 47
     # SET_BG_COLOR = 48
     DEFAULT_BG_COLOR = 49
+    DEFAULT_BG_COLOUR = 49
     DISABLE_PROPORTIONAL_SPACING = 50
     FRAMED = 51
     ENCIRCLED = 52
@@ -86,6 +87,7 @@ class Effect:
     NOT_OVERLINED = 55
     # SET_UNDERLINE_COLOR = 58
     DEFAULT_UNDERLINE_COLOR = 59
+    DEFAULT_UNDERLINE_COLOUR = 59
     IDEOGRAM_UNDERLINE_RIGHT = 60
     IDEOGRAM_DOUBLE_UNDERLINE_RIGHT = 61
     IDEOGRAM_OVERLINE_LEFT = 62
@@ -111,3 +113,31 @@ class Effect:
     BRIGHT_BG_MAGENTA = 105
     BRIGHT_BG_CYAN = 106
     BRIGHT_BG_WHITE = 107
+
+
+# A list of integers that correspond to foreground colours 
+# that can be used for random choices and other shorthand uses.
+FG_COLOURS: list[int] = [
+    Effect.BLACK,
+    Effect.RED,
+    Effect.GREEN,
+    Effect.YELLOW,
+    Effect.BLUE,
+    Effect.MAGENTA,
+    Effect.CYAN,
+    Effect.WHITE
+]
+
+
+# A list of integers that correspond to background colours 
+# that can be used for random choices and other shorthand uses.
+BG_COLOURS: list[int] = [
+    Effect.BG_BLACK,
+    Effect.BG_RED,
+    Effect.BG_GREEN,
+    Effect.BG_YELLOW,
+    Effect.BG_BLUE,
+    Effect.BG_MAGENTA,
+    Effect.BG_CYAN,
+    Effect.BG_WHITE
+]
