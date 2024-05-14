@@ -1,14 +1,24 @@
-from .ansi import ANSI, Effect, CantAdd
+"""
+This file is only used in generating the krayon.py file.
+It is not meant to be run.
+"""
+
+from .ansi import ANSI, Effect, CantAdd # type: ignore
 
 class C:
     def __init__(self, string: 'str | C' = '') -> None:
         if isinstance(string, C):
             string = string.string
-        self.string = string
+        self.string: str = string
         self.length = len(string)
         self.effects: list[int] = []
     
     def __str__(self) -> str:
+        self.string = self.string.replace(
+            ANSI.make(Effect.RESET), 
+            ANSI.make(Effect.RESET) + ANSI.make(*self.effects)
+        )
+
         return ANSI.make(*self.effects) + self.string + ANSI.make(Effect.RESET)
     
     def __add__(self, v) -> 'str | C':

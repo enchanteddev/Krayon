@@ -14,6 +14,11 @@ class C:
         self.effects: list[int] = []
     
     def __str__(self) -> str:
+        self.string = self.string.replace(
+            ANSI.make(Effect.RESET), 
+            ANSI.make(Effect.RESET) + ANSI.make(*self.effects)
+        )
+
         return ANSI.make(*self.effects) + self.string + ANSI.make(Effect.RESET)
     
     def __add__(self, v) -> 'str | C':
