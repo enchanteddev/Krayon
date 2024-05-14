@@ -42,4 +42,5 @@ class C:
             raise CantAdd(type(v))
         
     def raw(self) -> str:
+        """Return the string with ANSI code escaped. Useful for debugging colouring issues"""
         return str(self).replace("\033", "\\033")

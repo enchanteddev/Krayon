@@ -42,6 +42,7 @@ class C:
             raise CantAdd(type(v))
         
     def raw(self) -> str:
+        """Return the string with ANSI code escaped. Useful for debugging colouring issues"""
         return str(self).replace("\033", "\\033")
 
     @property
@@ -165,6 +166,10 @@ class C:
         self.effects.append(Effect.DEFAULT_COLOR)
         return self
     @property
+    def default_colour(self) -> 'C':
+        self.effects.append(Effect.DEFAULT_COLOUR)
+        return self
+    @property
     def bg_black(self) -> 'C':
         self.effects.append(Effect.BG_BLACK)
         return self
@@ -201,6 +206,10 @@ class C:
         self.effects.append(Effect.DEFAULT_BG_COLOR)
         return self
     @property
+    def default_bg_colour(self) -> 'C':
+        self.effects.append(Effect.DEFAULT_BG_COLOUR)
+        return self
+    @property
     def disable_proportional_spacing(self) -> 'C':
         self.effects.append(Effect.DISABLE_PROPORTIONAL_SPACING)
         return self
@@ -227,6 +236,10 @@ class C:
     @property
     def default_underline_color(self) -> 'C':
         self.effects.append(Effect.DEFAULT_UNDERLINE_COLOR)
+        return self
+    @property
+    def default_underline_colour(self) -> 'C':
+        self.effects.append(Effect.DEFAULT_UNDERLINE_COLOUR)
         return self
     @property
     def ideogram_underline_right(self) -> 'C':
