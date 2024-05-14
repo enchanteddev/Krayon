@@ -44,6 +44,10 @@ class C:
     def raw(self) -> str:
         """Return the string with ANSI code escaped. Useful for debugging colouring issues"""
         return str(self).replace("\033", "\\033")
+    
+    def add_ansi(self, ansi_code: int) -> 'C':
+        self.effects.append(ansi_code)
+        return self
 
     @property
     def reset(self) -> 'C':
