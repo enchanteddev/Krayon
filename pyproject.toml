@@ -1,0 +1,16 @@
+[project]
+name = "krayon"
+version = "0.0.1"
+authors = [
+  { name="enchanteddev" },
+]
+description = "Python Terminal Coloring library with awesome auto-complete support."
+readme = "readme.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/enchanteddev/Krayon"

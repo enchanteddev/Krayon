@@ -1,3 +1,5 @@
 __pycache__
 playground.py
 test_.py
+dist
+*.egg-info
