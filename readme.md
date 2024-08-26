@@ -15,6 +15,11 @@ from krayon import C
 
 print(C("Hello World!").red)
 ```
+
+## Examples
+![](/examples/eg.png)
+
+
 ## Guide + Docs
 ### The C-string
 The C string is the simplest method the style terminal output using ANSI codes. To create a C-string:
