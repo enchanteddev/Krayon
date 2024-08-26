@@ -9,13 +9,18 @@ with open(current_dir / 'generator/krayon.pre.py') as prefile:
 with open(current_dir / 'generator/krayon.template') as fnfile:
     fn = fnfile.read()
 
+
+# removes top comment
+pre = '"""'.join(pre.split('"""')[2:]) 
+
+
 final = pre + '\n\n'
 
 effects = [e for e in Effect.__dict__.keys() if '__' not in e]
 
 
 for effect in effects:
-    final += fn.replace('{c}', effect.lower()).replace('{C}', effect)
+    final += fn.format(c = effect.lower(), C = effect)
 
 with open(current_dir / 'krayon.py', 'w') as finalfile:
-    finalfile.write(final)
+    finalfile.write(final.strip())

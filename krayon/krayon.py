@@ -1,8 +1,3 @@
-"""
-This file is only used in generating the krayon.py file.
-It is not meant to be run.
-"""
-
 from .ansi import ANSI, Effect, CantAdd # type: ignore
 
 class C:
